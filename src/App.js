@@ -43,6 +43,7 @@ export default app;
 //Using react classes
 import React, { Component } from 'react';
 import './App.css';
+import Radium from "radium";
 import Person from './Person/Person';
 
 class App extends Component {
@@ -105,7 +106,11 @@ class App extends Component {
             fond: 'inherit',
             border: '1px solid blue',
             padding: '8px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            ':hover': {
+                backgroundColor: 'lightgreen',
+                color: 'black'
+            }
         };
 
         let persons = null;
@@ -128,6 +133,10 @@ class App extends Component {
             );
 
             style.backgroundColor='red';
+            style[':hover'] = {
+                backgroundColor: 'salmon',
+                color: 'black'
+            }
         }
 
         const classes = []; // "red bold" valid array of classes -> STRING!
@@ -154,4 +163,5 @@ class App extends Component {
     }
 }
 
-export default App;
+// higher order component
+export default Radium(App);
