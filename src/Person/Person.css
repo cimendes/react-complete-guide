@@ -7,3 +7,12 @@
     text-align: center;
 
 }
+
+/* Radium can do this
+@media (min-width: 500px) {
+    .Person{
+        width: 450px;
+    }
+}
+*/
+
